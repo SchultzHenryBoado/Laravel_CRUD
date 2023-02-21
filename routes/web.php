@@ -33,3 +33,7 @@ Route::post('/login/loginQuery', [UserController::class, 'loginQuery']);
 Route::post('/home/store', [StudentController::class, 'store']);
 Route::put('/home/{student}', [StudentController::class, 'update']);
 Route::delete('/home/{student}', [StudentController::class, 'destroy']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
